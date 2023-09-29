@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
+import { MainViewComponent } from './main-view/main-view.component'
 
-const routes: Routes = [];
+
+const routes: Routes = [
+  {path: '', component: HomePageComponent},
+  { path: 'todolist', component: MainViewComponent },
+   // otherwise redirect to home
+   { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
